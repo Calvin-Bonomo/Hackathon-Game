@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Sprites/dialog_box_bg.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/requis_portrait.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/paco_portrait.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Dialog_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 4
+font_data = ExtResource( 5 )
+
+[node name="Dialog" type="Node"]
+
+[node name="Portraits" type="HBoxContainer" parent="."]
+anchor_left = 0.193
+anchor_top = 0.266
+anchor_right = 0.807
+anchor_bottom = 0.752
+custom_constants/separation = 567
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Portraits"]
+position = Vector2( 14.592, 39.696 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="Portraits"]
+position = Vector2( 128.592, 33.696 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="Dialog Box" type="TextureRect" parent="."]
+anchor_top = 0.619
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 7
+size_flags_vertical = 10
+texture = ExtResource( 1 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialog Box"]
+anchor_left = 0.183
+anchor_top = 0.14
+anchor_right = 0.812
+anchor_bottom = 0.853
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog" type="VBoxContainer" parent="Dialog Box/MarginContainer"]
+margin_right = 161.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 1 )
+custom_constants/separation = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speaker Name" type="Label" parent="Dialog Box/MarginContainer/Dialog"]
+margin_right = 28.0
+margin_bottom = 4.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0.796078, 0.858824, 0.988235, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Requis:"
+
+[node name="Dialog Text" type="Label" parent="Dialog Box/MarginContainer/Dialog"]
+margin_top = 9.0
+margin_right = 161.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.796078, 0.858824, 0.988235, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "I used to be an adventurer like you... Then I took an arrow to the knee."
+autowrap = true
+
+[node name="Tooltip" type="Label" parent="Dialog Box/MarginContainer/Dialog"]
+margin_top = 35.0
+margin_right = 161.0
+margin_bottom = 39.0
+custom_colors/font_color = Color( 0.796078, 0.858824, 0.988235, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Press [Space] to continue..."
+align = 1
+valign = 2

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/knights1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.5, 9.5 )
+
+[node name="Player" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 7
+vframes = 4
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( -0.5, 6.5 )
+shape = SubResource( 1 )
+
+[connection signal="interact_with_npc" from="." to="." method="_on_Player_interact_with_npc"]
