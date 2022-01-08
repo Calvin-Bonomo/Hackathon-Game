@@ -17,6 +17,7 @@ config/icon="res://Sprites/icon.png"
 [autoload]
 
 Bootstrap="*res://Scripts/bootstrap.gd"
+SignalManager="*res://Scripts/SignalManager.gd"
 
 [display]
 

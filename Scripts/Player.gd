@@ -1,10 +1,7 @@
 extends Node2D
 
-var speed = 200
+export var speed = 200
 var move_dir = Vector2(0.0, 0.0)
-
-var npc_nearby = false
-signal interact_with_npc(position)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
